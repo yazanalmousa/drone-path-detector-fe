@@ -1,0 +1,7 @@
+<svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curved arrow pointer -->
+  <path d="M 10 10 
+           Q 40 50 10 90 
+           L 90 50 Z" 
+        fill="red"/>
+</svg>
