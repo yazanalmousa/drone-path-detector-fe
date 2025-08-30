@@ -1,4 +1,3 @@
-// hooks/useDroneStats.ts
 import { useMemo } from "react";
 import { useDroneStore } from "@/stores/droneStore";
 import { isAllowedToFly } from "@/utils/getDroneStatus";
@@ -42,7 +41,6 @@ export const useDroneStats = (): DroneStats => {
       };
     }
 
-    // Process unique drones data
     const dronesArray: ProcessedDrone[] = uniqueDrones.map((droneData) => {
       const feature = droneData.features[0];
       const registration = feature.properties.registration;

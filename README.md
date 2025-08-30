@@ -1,4 +1,4 @@
-# Drone Fleet Dashboard
+# Drone Path Detector - Frontend
 
 ## How to Run the Application
 
@@ -12,8 +12,8 @@
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
-   cd drone-fleet-dashboard
+   git clone https://github.com/yazanalmousa/drone-path-detector-fe.git
+   cd drone-path-detector-fe
    ```
 
 2. **Install dependencies**
@@ -27,7 +27,7 @@
    Create a `.env` file in the root directory and add the following variables:
 
    ```env
-   VITE_MAPBOX_ACCESS_TOKEN=pk.eyJ1IjoieWF6YW4tMjAwMSIsImEiOiJjbWVwdGhzOWcwanAzMmxxdnV4OXkyN3h6In0.QsQKjmg5a5BPmKpTzVjZYg
+   VITE_MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
    VITE_BE_URL=ws://localhost:9013
    ```
 
@@ -45,7 +45,7 @@
 
 | Variable                   | Description                             | Example               |
 | -------------------------- | --------------------------------------- | --------------------- |
-| `VITE_MAPBOX_ACCESS_TOKEN` | Mapbox API token for map rendering      | `pk.eyJ1...`          |
+| `VITE_MAPBOX_ACCESS_TOKEN` | Mapbox API token for map rendering      | `pk.ey...`            |
 | `VITE_BE_URL`              | WebSocket URL for drone data connection | `ws://localhost:9013` |
 
 ### Notes

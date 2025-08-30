@@ -2,12 +2,14 @@ interface DroneStatusProps {
   model?: string;
   altitude?: string;
   flightTime?: string;
+  name?: string;
 }
 
 export default function DroneStatus({
   model = "Mavic 3 Pro",
   altitude = "32.5 m",
   flightTime = "00:25:45",
+  name,
 }: DroneStatusProps) {
   return (
     <div className="relative inline-block mb-4">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom"; // Fix the import
+import { useLocation } from "react-router-dom";
 import DashboardIcon from "@/assets/dashboardIcon.svg?react";
 import MapIcon from "@/assets/mapIcon.svg?react";
 import { cn } from "@/lib/utils";
@@ -40,7 +40,6 @@ export function Sidebar({ onViewChange }: SidebarProps) {
       <div className="flex flex-col py-6 gap-2">
         {navItems.map((item) => {
           const Icon = item.icon;
-          // Check if current route matches the item's route
           const isActive = location.pathname === item.routeTo;
 
           return (

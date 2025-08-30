@@ -37,15 +37,16 @@ const DroneSelectorLayout = ({
 
   return (
     <>
-      {/* Mobile toggle button - only visible on small screens when sidebar is closed */}
-      {!isMobileOpen && (
-        <button
-          className="lg:hidden fixed top-4 left-4 z-50 bg-[#111111] rounded-full p-2"
-          onClick={() => setIsMobileOpen(true)}
-        >
+      <button
+        className="lg:hidden top-4 left-4 z-50 bg-[#111111] rounded-full p-2"
+        onClick={() => setIsMobileOpen(!isMobileOpen)}
+      >
+        {isMobileOpen ? (
+          <X className="w-5 h-5 text-white" />
+        ) : (
           <Menu className="w-5 h-5 text-white" />
-        </button>
-      )}
+        )}
+      </button>
 
       <div
         className={cn(
@@ -54,8 +55,8 @@ const DroneSelectorLayout = ({
           "md:w-[300px]",
           "w-[280px]",
           isToggled ? "h-full" : "h-fit",
-          // Hide completely on mobile when closed
-          !isMobileOpen && "hidden lg:flex",
+          "lg:translate-x-0",
+          isMobileOpen ? "translate-x-0" : "-translate-x-full",
           className
         )}
       >
@@ -67,22 +68,14 @@ const DroneSelectorLayout = ({
           onClick={handleHeaderClick}
         >
           <DronesListTitle />
-          <div className="flex gap-2">
+          {(onClose || isToggled) && !isMobileOpen && (
             <button
-              onClick={() => setIsMobileOpen(false)}
-              className="lg:hidden w-6 h-6 flex items-center justify-center hover:bg-transparent rounded transition-opacity duration-200"
+              onClick={handleCloseClick}
+              className="w-6 h-6 flex items-center justify-center hover:bg-transparent rounded hover:cursor-pointer transition-opacity duration-200"
             >
-              <X className="w-5 h-5 text-white" />
+              <CloseIcon />
             </button>
-            {(onClose || isToggled) && (
-              <button
-                onClick={handleCloseClick}
-                className="hidden lg:flex w-6 h-6 items-center justify-center hover:bg-transparent rounded hover:cursor-pointer transition-opacity duration-200"
-              >
-                <CloseIcon />
-              </button>
-            )}
-          </div>
+          )}
         </div>
 
         {isToggled && (

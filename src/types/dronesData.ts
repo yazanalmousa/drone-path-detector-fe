@@ -1,5 +1,3 @@
-// types/drone.ts
-
 export interface DroneDataType {
   type: string;
   features: Features[];
